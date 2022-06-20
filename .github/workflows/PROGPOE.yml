@@ -31,7 +31,7 @@ jobs:
      # Compiles classes to test 
       - name: compile classes
         working-directory: ./src/
-        run: javac -cp "../../testresources/junit-platform-console-standalone-1.8.2.jar" Task3/Login.java Task3/Task1.java Task3/TaskClass.java  "../../test/Task3/LoginIT.java"  "../../test/Task3/Task1IT.java"  "../../test/Task3/TaskClassIT.java.java" 
+        run: javac -cp "../../testresources/junit-platform-console-standalone-1.8.2.jar" ./Task3/Login.java ./Task3/Task1.java ./Task3/TaskClass.java  "../../test/Task3/LoginIT.java"  "../../test/Task3/Task1IT.java"  "../../test/Task3/TaskClassIT.java.java" 
 
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
@@ -57,4 +57,4 @@ jobs:
         #run Task1 Class and output report 
       - name: run tests and create report 
         working-directory: ./test
-        run: java  "../testresources/junit-platform-suite-commons-1.8.2.jar:../testresources/junit-platform-suite-api-1.8.2.jar:../testresources/junit-platform-suite-engine-1.8.2:../testresources/juniorg.junit.platform.console.ConsoleLauncher " -cp "./" --select-class Task3.Task1IT  --reports-dir ="reports"
+        run: java  "../testresources/junit-platform-suite-commons-1.8.2.jar:../testresources/junit-platform-suite-api-1.8.2.jar:../testresources/junit-platform-suite-engine-1.8.2:../testresources/juniorg.junit.platform.console.ConsoleLauncher " -cp "./" --select-class ./Task3.Task1IT  --reports-dir ="reports"
